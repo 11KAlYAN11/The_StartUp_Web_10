@@ -5,9 +5,9 @@ export function Testimonials({ config }: { config: OrgConfig }) {
   const { heading, items } = config.testimonials;
 
   return (
-    <section id="testimonials" className="bg-zinc-50 py-24">
+    <section id="testimonials" className="bg-zinc-50 py-24 dark:bg-zinc-900">
       <div className="mx-auto max-w-7xl px-6">
-        <h2 className="text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl">
+        <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white md:text-4xl">
           {heading}
         </h2>
 
@@ -15,17 +15,19 @@ export function Testimonials({ config }: { config: OrgConfig }) {
           {items.map((item) => (
             <div
               key={item.author}
-              className="flex flex-col rounded-2xl bg-white p-6 shadow-sm"
+              className="flex flex-col rounded-2xl bg-white p-6 shadow-sm dark:bg-zinc-950"
             >
               <Quote className="h-6 w-6 text-primary" />
-              <p className="mt-4 flex-1 text-sm text-zinc-700">
+              <p className="mt-4 flex-1 text-sm text-zinc-700 dark:text-zinc-300">
                 &ldquo;{item.quote}&rdquo;
               </p>
               <div className="mt-6">
-                <p className="text-sm font-semibold text-zinc-900">
+                <p className="text-sm font-semibold text-zinc-900 dark:text-white">
                   {item.author}
                 </p>
-                <p className="text-xs text-zinc-500">{item.role}</p>
+                <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                  {item.role}
+                </p>
               </div>
             </div>
           ))}

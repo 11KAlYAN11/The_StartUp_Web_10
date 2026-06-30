@@ -30,6 +30,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       style={
         {
@@ -38,7 +39,16 @@ export default function RootLayout({
         } as React.CSSProperties
       }
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{if(localStorage.getItem("theme")==="dark"){document.documentElement.classList.add("dark");}}catch(e){}})();`,
+          }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col bg-background text-foreground">
+        {children}
+      </body>
     </html>
   );
 }

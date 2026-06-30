@@ -35,24 +35,24 @@ export function Contact({ config }: { config: OrgConfig }) {
     <section id="contact" className="mx-auto max-w-7xl px-6 py-24">
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
         <div>
-          <h2 className="text-3xl font-bold tracking-tight text-zinc-900 md:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white md:text-4xl">
             Need help with your business?
           </h2>
-          <p className="mt-4 max-w-md text-lg text-zinc-600">
+          <p className="mt-4 max-w-md text-lg text-zinc-600 dark:text-zinc-400">
             Tell us about your project and we&apos;ll get back to you within
             one business day.
           </p>
 
           <div className="mt-8 space-y-4">
-            <div className="flex items-center gap-3 text-sm text-zinc-700">
+            <div className="flex items-center gap-3 text-sm text-zinc-700 dark:text-zinc-300">
               <Mail className="h-5 w-5 text-primary" />
               {contact.email}
             </div>
-            <div className="flex items-center gap-3 text-sm text-zinc-700">
+            <div className="flex items-center gap-3 text-sm text-zinc-700 dark:text-zinc-300">
               <Phone className="h-5 w-5 text-primary" />
               {contact.phone}
             </div>
-            <div className="flex items-center gap-3 text-sm text-zinc-700">
+            <div className="flex items-center gap-3 text-sm text-zinc-700 dark:text-zinc-300">
               <MapPin className="h-5 w-5 text-primary" />
               {contact.address}
             </div>
@@ -61,38 +61,38 @@ export function Contact({ config }: { config: OrgConfig }) {
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-2xl border border-zinc-200 p-6 sm:p-8"
+          className="rounded-2xl border border-zinc-200 p-6 dark:border-zinc-800 sm:p-8"
         >
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <input
               required
               name="name"
               placeholder="Full name"
-              className="col-span-1 rounded-lg border border-zinc-300 px-4 py-2.5 text-sm outline-none focus:border-primary sm:col-span-2"
+              className="col-span-1 rounded-lg border border-zinc-300 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-zinc-700 dark:bg-zinc-900 dark:text-white sm:col-span-2"
             />
             <input
               required
               type="email"
               name="email"
               placeholder="Email"
-              className="rounded-lg border border-zinc-300 px-4 py-2.5 text-sm outline-none focus:border-primary"
+              className="rounded-lg border border-zinc-300 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-zinc-700 dark:bg-zinc-900 dark:text-white"
             />
             <input
               name="phone"
               placeholder="Mobile number"
-              className="rounded-lg border border-zinc-300 px-4 py-2.5 text-sm outline-none focus:border-primary"
+              className="rounded-lg border border-zinc-300 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-zinc-700 dark:bg-zinc-900 dark:text-white"
             />
             <input
               name="designation"
               placeholder="Designation"
-              className="col-span-1 rounded-lg border border-zinc-300 px-4 py-2.5 text-sm outline-none focus:border-primary sm:col-span-2"
+              className="col-span-1 rounded-lg border border-zinc-300 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-zinc-700 dark:bg-zinc-900 dark:text-white sm:col-span-2"
             />
             <textarea
               required
               name="message"
               placeholder="Message"
               rows={4}
-              className="col-span-1 rounded-lg border border-zinc-300 px-4 py-2.5 text-sm outline-none focus:border-primary sm:col-span-2"
+              className="col-span-1 rounded-lg border border-zinc-300 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-zinc-700 dark:bg-zinc-900 dark:text-white sm:col-span-2"
             />
           </div>
 

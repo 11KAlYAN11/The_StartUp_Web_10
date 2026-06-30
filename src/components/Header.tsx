@@ -3,14 +3,18 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import type { OrgConfig } from "@/types/config";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Header({ config }: { config: OrgConfig }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur dark:border-white/10 dark:bg-zinc-950/80">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#" className="text-lg font-bold tracking-tight text-zinc-900">
+        <a
+          href="#"
+          className="text-lg font-bold tracking-tight text-zinc-900 dark:text-white"
+        >
           {config.org.logoText}
         </a>
 
@@ -19,37 +23,43 @@ export function Header({ config }: { config: OrgConfig }) {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900"
+              className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white"
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        <a
-          href="#contact"
-          className="hidden rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90 md:inline-block"
-        >
-          Get in Touch
-        </a>
+        <div className="hidden items-center gap-3 md:flex">
+          <ThemeToggle />
+          <a
+            href="#contact"
+            className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          >
+            Get in Touch
+          </a>
+        </div>
 
-        <button
-          className="md:hidden"
-          aria-label="Toggle menu"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="flex items-center gap-3 md:hidden">
+          <ThemeToggle />
+          <button
+            aria-label="Toggle menu"
+            onClick={() => setOpen((v) => !v)}
+            className="text-zinc-900 dark:text-white"
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
 
       {open && (
-        <div className="border-t border-black/5 bg-white px-6 py-4 md:hidden">
+        <div className="border-t border-black/5 bg-white px-6 py-4 dark:border-white/10 dark:bg-zinc-950 md:hidden">
           <nav className="flex flex-col gap-4">
             {config.nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-zinc-700"
+                className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
                 onClick={() => setOpen(false)}
               >
                 {item.label}

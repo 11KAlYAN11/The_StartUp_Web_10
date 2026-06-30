@@ -17,15 +17,17 @@ export function Hero({ config }: { config: OrgConfig }) {
   const slide = slides[index];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-zinc-50 to-white">
+    <section className="relative overflow-hidden bg-gradient-to-b from-zinc-50 to-white dark:from-zinc-900 dark:to-zinc-950">
       <div className="mx-auto flex max-w-7xl flex-col items-start px-6 py-24 md:py-32">
         <span className="rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
           {slide.eyebrow}
         </span>
-        <h1 className="mt-6 max-w-3xl text-4xl font-bold tracking-tight text-zinc-900 md:text-6xl">
+        <h1 className="mt-6 max-w-3xl text-4xl font-bold tracking-tight text-zinc-900 dark:text-white md:text-6xl">
           {slide.headline}
         </h1>
-        <p className="mt-6 max-w-xl text-lg text-zinc-600">{slide.subhead}</p>
+        <p className="mt-6 max-w-xl text-lg text-zinc-600 dark:text-zinc-400">
+          {slide.subhead}
+        </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <a
             href="#contact"
@@ -35,7 +37,7 @@ export function Hero({ config }: { config: OrgConfig }) {
           </a>
           <a
             href="#services"
-            className="rounded-full border border-zinc-300 px-6 py-3 text-sm font-semibold text-zinc-800 transition-colors hover:border-zinc-400"
+            className="rounded-full border border-zinc-300 px-6 py-3 text-sm font-semibold text-zinc-800 transition-colors hover:border-zinc-400 dark:border-zinc-700 dark:text-zinc-200 dark:hover:border-zinc-500"
           >
             {slide.ctaSecondary}
           </a>
@@ -48,7 +50,9 @@ export function Hero({ config }: { config: OrgConfig }) {
               aria-label={`Show slide ${i + 1}`}
               onClick={() => setIndex(i)}
               className={`h-1.5 rounded-full transition-all ${
-                i === index ? "w-8 bg-primary" : "w-3 bg-zinc-300"
+                i === index
+                  ? "w-8 bg-primary"
+                  : "w-3 bg-zinc-300 dark:bg-zinc-700"
               }`}
             />
           ))}
