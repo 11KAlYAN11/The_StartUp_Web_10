@@ -1,0 +1,138 @@
+org:
+  name: "Nimbus Works"
+  tagline: "Engineering ideas into products"
+  logoText: "Nimbus Works"
+  primaryColor: "#4f46e5"
+  accentColor: "#0ea5e9"
+  contact:
+    email: "hello@nimbusworks.io"
+    phone: "+1 (555) 012-3456"
+    address: "548 Market St, San Francisco, CA 94104"
+    formEndpoint: "" # e.g. https://formspree.io/f/xxxxxxx
+  social:
+    linkedin: "https://linkedin.com/company/nimbusworks"
+    twitter: "https://twitter.com/nimbusworks"
+    github: "https://github.com/nimbusworks"
+
+nav:
+  - label: "Services"
+    href: "#services"
+  - label: "Why Us"
+    href: "#why-us"
+  - label: "Industries"
+    href: "#industries"
+  - label: "Testimonials"
+    href: "#testimonials"
+  - label: "Insights"
+    href: "#insights"
+  - label: "Contact"
+    href: "#contact"
+
+hero:
+  rotating:
+    - eyebrow: "AI & Product Engineering"
+      headline: "We build the software that powers fast-moving startups"
+      subhead: "From zero-to-one MVPs to scaling production platforms, we partner with founders to ship reliable software fast."
+      ctaPrimary: "Start a project"
+      ctaSecondary: "See our work"
+    - eyebrow: "Cloud & DevOps"
+      headline: "Ship faster with infrastructure that just works"
+      subhead: "Battle-tested cloud architecture, CI/CD, and observability so your team can focus on the product."
+      ctaPrimary: "Talk to us"
+      ctaSecondary: "Learn more"
+    - eyebrow: "Design & Experience"
+      headline: "Products people actually want to use"
+      subhead: "Research-driven design paired with engineering rigor for experiences that convert."
+      ctaPrimary: "Get in touch"
+      ctaSecondary: "View case studies"
+
+services:
+  heading: "What we do"
+  subheading: "End-to-end product development for startups and scaleups"
+  items:
+    - title: "Product Strategy & Roadmap"
+      description: "Validate your idea, define your MVP, and plan a roadmap that gets you to product-market fit."
+      icon: "compass"
+    - title: "Web & Mobile Engineering"
+      description: "Full-stack development across web and mobile using modern, maintainable architectures."
+      icon: "code"
+    - title: "AI & Automation"
+      description: "Practical AI features — from copilots to workflow automation — built on your real data."
+      icon: "sparkles"
+    - title: "Cloud Infrastructure & DevOps"
+      description: "Scalable, secure infrastructure with CI/CD pipelines so you can ship with confidence."
+      icon: "cloud"
+    - title: "UI/UX Design"
+      description: "Interfaces that are simple, fast, and built around how your users actually work."
+      icon: "layout"
+    - title: "QA & Reliability"
+      description: "Automated testing and monitoring to keep quality high as you move fast."
+      icon: "shield"
+
+whyUs:
+  heading: "Why startups choose us"
+  items:
+    - title: "Founder-first approach"
+      description: "We think like operators, not vendors — every decision is weighed against your runway and goals."
+    - title: "Senior engineers only"
+      description: "No bait-and-switch staffing. You work directly with experienced builders from day one."
+    - title: "Fixed-scope sprints"
+      description: "Transparent pricing and predictable delivery in two-week cycles."
+    - title: "Built to scale"
+      description: "Architecture decisions made with your next funding round in mind, not just your MVP."
+    - title: "Fast iteration"
+      description: "Weekly demos and tight feedback loops keep you in control of the product direction."
+    - title: "Long-term partnership"
+      description: "We stick around post-launch to support, iterate, and grow with you."
+
+industries:
+  heading: "Industries we serve"
+  items:
+    - name: "Fintech"
+      description: "Payments, lending, and compliance-aware platforms."
+    - name: "Healthtech"
+      description: "Patient-facing apps and clinical workflow tools."
+    - name: "E-commerce"
+      description: "Storefronts, marketplaces, and checkout optimization."
+    - name: "B2B SaaS"
+      description: "Multi-tenant platforms and internal tooling."
+    - name: "EdTech"
+      description: "Learning platforms and content delivery systems."
+    - name: "Logistics"
+      description: "Fleet, supply chain, and real-time tracking systems."
+
+testimonials:
+  heading: "What founders say"
+  items:
+    - quote: "They shipped our MVP in eight weeks and it hasn't needed a rewrite since. Rare for a dev shop."
+      author: "Priya Shah"
+      role: "CEO, Fintech Startup"
+    - quote: "Feels like an extension of our own team — proactive, fast, and easy to work with."
+      author: "Daniel Cho"
+      role: "Founder, HealthOS"
+    - quote: "The infrastructure work alone saved us months before our Series A."
+      author: "Maria Lopez"
+      role: "CTO, LogiTrack"
+
+insights:
+  heading: "Insights"
+  subheading: "Notes on building startup software"
+  items:
+    - title: "How to scope an MVP you can actually ship in 8 weeks"
+      excerpt: "A practical framework for cutting scope without cutting value."
+      href: "#"
+    - title: "Choosing infrastructure that won't slow your next round"
+      excerpt: "What to build now vs. defer until after Series A."
+      href: "#"
+    - title: "Where AI features actually move the needle for early-stage products"
+      excerpt: "A grounded look past the hype, with real examples."
+      href: "#"
+
+footer:
+  description: "We're a product engineering partner for founders who need to move fast without breaking things."
+  legal:
+    - label: "Privacy Policy"
+      href: "#"
+    - label: "Terms & Conditions"
+      href: "#"
+  copyright: "All rights reserved."
