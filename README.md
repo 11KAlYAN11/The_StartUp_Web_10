@@ -33,3 +33,7 @@ This repo has three dedicated guides depending on what you're doing:
   it directly, no separate backend service required. Set `ORG_CONFIG` as an
   environment variable in Vercel project settings to deploy a non-default
   client config (see [MULTI_ORG_SETUP.md](MULTI_ORG_SETUP.md)).
+- **Light/dark mode:** there's a toggle in the header. It does **not**
+  follow the visitor's OS/browser preference — every visitor sees **light
+  mode by default**, and dark mode only applies once they click the toggle
+  (their choice is then remembered for future visits via `localStorage`).
