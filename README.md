@@ -37,3 +37,4 @@ This repo has three dedicated guides depending on what you're doing:
   follow the visitor's OS/browser preference — every visitor sees **light
   mode by default**, and dark mode only applies once they click the toggle
   (their choice is then remembered for future visits via `localStorage`).
+- **SEO Optimized** hassle-free accessibility and performance. The template is built with Next.js, which provides server-side rendering and static site generation for improved SEO. It also follows best practices for accessibility and performance, ensuring that your site is fast and user-friendly.

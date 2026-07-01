@@ -25,6 +25,7 @@ export interface OrgConfig {
       subhead: string;
       ctaPrimary: string;
       ctaSecondary: string;
+      backgroundImage?: string;
     }[];
   };
   services: {
@@ -34,11 +35,12 @@ export interface OrgConfig {
   };
   whyUs: {
     heading: string;
+    headingHighlight?: string;
     items: { title: string; description: string }[];
   };
   industries: {
     heading: string;
-    items: { name: string; description: string }[];
+    items: { name: string; description: string; image?: string }[];
   };
   testimonials: {
     heading: string;
