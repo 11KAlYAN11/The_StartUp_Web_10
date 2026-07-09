@@ -1,11 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { OrgConfig } from "@/types/config";
+
+// Single looping video that persists across all slides — same pattern as Microland
+const HERO_VIDEO = "https://videos.pexels.com/video-files/3141208/3141208-uhd_2560_1440_25fps.mp4";
 
 export function Hero({ config }: { config: OrgConfig }) {
   const slides = config.hero.rotating;
   const [index, setIndex] = useState(0);
+  const [activeText, setActiveText] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -14,26 +19,40 @@ export function Hero({ config }: { config: OrgConfig }) {
     return () => clearInterval(id);
   }, [slides.length]);
 
-  const slide = slides[index];
+  // Fade text out then swap, so headline never jumps
+  useEffect(() => {
+    const t = setTimeout(() => setActiveText(index), 300);
+    return () => clearTimeout(t);
+  }, [index]);
+
+  const slide = slides[activeText];
 
   return (
-    <section className="relative isolate flex min-h-[560px] items-center overflow-hidden bg-zinc-900">
-      {slides.map((s, i) =>
-        s.backgroundImage ? (
-          <div
-            key={i}
-            aria-hidden
-            className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out"
-            style={{
-              backgroundImage: `url(${s.backgroundImage})`,
-              opacity: i === index ? 1 : 0,
-            }}
-          />
-        ) : null,
-      )}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/65 to-black/30" />
+    <section className="relative isolate flex min-h-[620px] items-center overflow-hidden bg-zinc-950">
+      {/* Single persistent background video — never restarts between slides */}
+      <video
+        ref={videoRef}
+        aria-hidden
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="absolute inset-0 h-full w-full object-cover opacity-60"
+      >
+        <source src={HERO_VIDEO} type="video/mp4" />
+      </video>
+
+      {/* Deep gradient so text is always crisp over the video */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-start px-6 py-24 md:py-32">
+        {/* Text fades when slide changes — activeText lags index by 300ms */}
+        <div
+          key={activeText}
+          style={{ animation: "heroFadeUp 0.6s ease both" }}
+        >
         <span className="rounded-full border border-primary/40 bg-primary/15 px-4 py-1.5 text-sm font-semibold text-primary">
           {slide.eyebrow}
         </span>
@@ -54,6 +73,7 @@ export function Hero({ config }: { config: OrgConfig }) {
           >
             {slide.ctaSecondary}
           </a>
+        </div>
         </div>
 
         <div className="mt-12 flex gap-2">

@@ -26,6 +26,7 @@ export interface OrgConfig {
       ctaPrimary: string;
       ctaSecondary: string;
       backgroundImage?: string;
+      backgroundVideo?: string;
     }[];
   };
   services: {
